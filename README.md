@@ -20,5 +20,5 @@ Refer to [here](https://www.hcup-us.ahrq.gov/toolssoftware/ccs/ccs.jsp) for a de
 ## Mapping Proc To CCS
 
 There are different ways of mapping Procedure codes, for exaple using crosswalk. 
-In `MappingProcToCCS.ipynb` i've outlined how to do using an external tool. Check it out if you're interesd.
+In `MappingProcToCCS.ipynb` i've outlined how to do using an external tool. Check it out if you're interested.
 
