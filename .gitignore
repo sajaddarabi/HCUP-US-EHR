@@ -1,0 +1,4 @@
+*.zip
+data/
+*.csv
+*.pkl

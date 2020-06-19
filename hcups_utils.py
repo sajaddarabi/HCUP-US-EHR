@@ -101,9 +101,9 @@ def get_cptevents_ccs(save_path='./data'):
         return df
 
     if (not os.path.isfile(path_to_file[:-4])):
-        urllib.urlretrieve('https://hcup-us.ahrq.gov/toolssoftware/ccs_svcsproc/2019_ccs_services_procedures.zip', _fname_cptproc)
+        urllib.urlretrieve('https://hcup-us.ahrq.gov/toolssoftware/ccs_svcsproc/2019_ccs_services_procedures.zip', path_to_file)
         zip_ref = zipfile.ZipFile(path_to_file, 'r')
-        zip_ref.extractall('./')
+        zip_ref.extractall(save_path)
         zip_ref.close()
         os.remove(path_to_file)
 
@@ -114,7 +114,7 @@ def get_cptevents_ccs(save_path='./data'):
     df = df.join(t)
     df = df.drop('Code Range', axis=1)
 
-    with open('./cpt_ccs_df.pkl', 'wb') as handle:
+    with open(os.path.join(save_path, 'cpt_ccs_df.pkl'), 'wb') as handle:
         pickle.dump(df, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
     return df
